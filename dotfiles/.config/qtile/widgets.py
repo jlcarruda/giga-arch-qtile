@@ -59,6 +59,7 @@ def change_theme(qtile):
     # with open(home + '/.config/qtile/variables', 'w') as file:
     #   file.writelines(variables)
     os.environ["GIGA_THEME"] = theme
+    
     qtile.cmd_reload_config()
     subprocess.run(["notify-send","-a", " GIGA", " Theme: ", "%s" %theme_list[index]])
 

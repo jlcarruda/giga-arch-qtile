@@ -11,7 +11,7 @@ terminal = "alacritty"
 
 ## THEME VARIABLES
 theme_list = []
-current_theme = os.environ["GIGA_THEME"] or "giga"
+current_theme = os.getenv("GIGA_THEME") or "giga"
 main_font = "Fira Code Medium" # Font in use for the entire system
 awesome_font = "Font Awesome 6 Pro" # Font for the icons
 bar_position = "top" # Bar position (top or bottom)
@@ -38,7 +38,7 @@ follow_mouse_focus = True
 bring_front_click = False
 floats_kept_above = True
 cursor_warp = False
-prompt = "".format(os.environ["USER"], socket.gethostname()) # Format of the prompt
+prompt = "".format(os.getenv("USER"), socket.gethostname()) # Format of the prompt
 
 ## NETWORK
 private_ip = get_private_ip()
