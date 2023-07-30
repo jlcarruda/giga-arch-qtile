@@ -1,19 +1,3 @@
-#!/usr/bin/env bash
-# _______  _______  ______  _______  __        
-#|       ||   _   ||   __ \|     __||  |.-----.
-#|   -  _||       ||      <|__     ||  ||  _  |
-#|_______||___|___||___|__||_______||__||   __|
-#                                       |__|   
-# QARSlp Qtile + Arch Ricing System
-# By: gibranlp <thisdoesnotwork@gibranlp.dev>
-# MIT licence 
-#
-
-variables=()
-while IFS= read -r line; do
-   variables+=("$line")
-done < ~/.config/qtile/variables
-
 dir="$HOME/Pictures/Wallpapers/"
 file=`/bin/ls -1 "$dir" | sort --random-sort | head -1` # Select random file on directory
 path=`readlink --canonicalize "$dir/$file"` # Converts to full path
