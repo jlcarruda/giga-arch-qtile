@@ -24,64 +24,19 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-import json
-import os
-from libqtile import bar, layout, widget
+# import os
+import subprocess
+from variables import *
+from layout import *
+from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
-from libqtile.utils import guess_terminal
 
 mod = "mod4"
 alt = "mod1"
 terminal = "alacritty"
 
-home = os.path.expanduser('~') # Path for use in folders
-
-# Get current screen resolution
-resolution = os.popen('xdpyinfo | awk "/dimensions/{print $2}"').read()
-xres = resolution[17:21]
-yres = resolution[22:26]
-
-# Set Bar and font sizes for different resolutions
-if xres >= "3840" and yres >= "2160": #4k
-  layout_margin=15
-  single_layout_margin=10  
-  layout_border_width=5
-  single_border_width=5
-  font_size=20
-  bar_size=30
-  widget_width=400
-  max_ratio=0.85
-  ratio=0.70
-  if bar_position == "bottom":
-    bar_margin=[0,15,10,15]
-  else:
-    bar_margin=[10,15,0,15]
-elif xres == "1920" and yres == "1080": #FullHD
-  layout_margin=10
-  single_layout_margin=5  
-  layout_border_width=4 
-  single_border_width=4
-  font_size=16
-  bar_size=25
-  widget_width=220
-  max_ratio=0.85
-  ratio=0.70
-  if bar_position == "bottom":
-    bar_margin=[0,10,5,10]
-  else:
-    bar_margin=[5,10,0,10]
-else: # 1366 x 768 Macbook air 11"
-  layout_margin=2
-  single_layout_margin=2  
-  layout_border_width=2
-  single_border_width=2
-  font_size=13
-  bar_size=20
-  widget_width=100
-  max_ratio=0.60
-  ratio=0.50
-  bar_margin=[0,0,0,0]
+# home = os.path.expanduser('~') # Path for use in folders
 
 keys = [
     # A list of available commands that can be bound to keys can be found
@@ -149,6 +104,8 @@ group_labels=["","","","","","","","","",""] # Cus
 group_names = ["1","2","3","4","5","6","7","8","9","0"]
 group_layouts=["monadtall", "monadtall", "monadtall", "monadtall","monadtall", "monadtall", "monadtall","monadwide", "monadtall", "monadtall"]
 
+layouts = init_layouts()
+
 for i in range(len(group_names)):
   groups.append(
     Group(
@@ -156,7 +113,6 @@ for i in range(len(group_names)):
       layout=group_layouts[i].lower(),
       label=group_labels[i],
   ))
-
 
 
 for i in groups:
@@ -182,38 +138,6 @@ for i in groups:
             #     desc="move focused window to group {}".format(i.name)),
         ]
     )
-
-## Import Colors from Pywal
-with open(home + '/.cache/wal/colors.json') as wal_import:
-  data = json.load(wal_import)
-  wallpaper = data['wallpaper']
-  colors = data['colors']
-  val_colors = list(colors.values())
-  def getList(val_colors):
-    return [*val_colors]
-    
-  def init_colors():
-    return [*val_colors]
-
-color = init_colors()
-
-
-
-layouts = [
-    layout.Columns(border_focus_stack=["#d75f5f", "#8f3d3d"], border_width=4),
-    layout.Max(),
-    # Try more layouts by unleashing below layouts.
-    # layout.Stack(num_stacks=2),
-    # layout.Bsp(),
-    # layout.Matrix(),
-    # layout.MonadTall(),
-    # layout.MonadWide(),
-    # layout.RatioTile(),
-    # layout.Tile(),
-    # layout.TreeTab(),
-    # layout.VerticalTile(),
-    # layout.Zoomy(),
-]
 
 widget_defaults = dict(
     font="sans",
@@ -258,12 +182,15 @@ mouse = [
     Click([mod], "Button2", lazy.window.bring_to_front()),
 ]
 
-dgroups_key_binder = None
-dgroups_app_rules = []  # type: list
-follow_mouse_focus = True
-bring_front_click = False
-floats_kept_above = True
-cursor_warp = False
+## Hooks
+@hook.subscribe.startup # This file gets executed everytime qtile restarts
+def start():
+  subprocess.call(home + '/.local/bin/boot')
+      
+@hook.subscribe.startup_once # Ths file gets executed at first start only
+def start_once():
+  subprocess.call(home + '/.local/bin/autostart')
+
 floating_layout = layout.Floating(
     float_rules=[
         # Run the utility of `xprop` to see the wm class and name of an X client.
