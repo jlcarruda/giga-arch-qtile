@@ -146,6 +146,9 @@ widget_defaults = dict(
 )
 extension_defaults = widget_defaults.copy()
 
+## TODO: adicionar tema de forma dinamica
+from themes.giga import *
+
 screens = [
     Screen(
         bottom=bar.Bar(
