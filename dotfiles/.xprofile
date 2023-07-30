@@ -1,5 +1,4 @@
-export GIGA_THEME="giga"
-#chmod u+s /usr/bin/Xorg  # Workaround until I figure out how to add DM
+export PATH="$PATH:/$HOME/.local/bin"
 xrandr --output $(xrandr | grep "connected primary" | awk '{print $1}') --mode 1920x1080 -r 60
 
 dunst

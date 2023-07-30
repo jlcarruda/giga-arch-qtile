@@ -31,7 +31,7 @@ function configure()
   cp ./dotfiles/.xinitrc ~
   cp ./dotfiles/.xprofile ~
   cp ./dotfiles/.profile ~
-  
+
   set_fonts
   lightdm_configure
 }
