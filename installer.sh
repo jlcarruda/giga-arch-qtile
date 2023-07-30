@@ -61,3 +61,4 @@ function install()
 }
 
 install
+./configure.sh

@@ -20,10 +20,8 @@ function configure()
 {
   cp -r ./dotfiles/.config/* $HOME/.config
   cp ./dotfiles/.zshrc ~
-
-  set_fonts
-  ligthdm_configure
-  
 }
 
 configure
+set_fonts
+ligthdm_configure
