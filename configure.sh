@@ -9,9 +9,9 @@ function set_fonts()
   fc-cache -f -v
 }
 
-function lighdm_configure()
+function lightdm_configure()
 {
-  sudo cp ./dotfiles/lightdm.conf /etc/lightdm/lightdm.conf
+  sudo cp ./dotfiles/lightdm/lightdm.conf /etc/lightdm/lightdm.conf
   sudo cp ./dotfiles/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
   sudo cp ./dotfiles/lightdm/lightdmxrandr.sh /usr/share
 }
@@ -24,4 +24,4 @@ function configure()
 
 configure
 set_fonts
-ligthdm_configure
+lightdm_configure
