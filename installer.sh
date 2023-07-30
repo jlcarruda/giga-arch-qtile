@@ -62,3 +62,4 @@ function install()
 
 install
 ./configure.sh
+wpg-install.sh
