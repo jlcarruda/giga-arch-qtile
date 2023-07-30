@@ -20,6 +20,9 @@ function configure()
 {
   cp -r ./dotfiles/.config/* $HOME/.config
   cp ./dotfiles/.zshrc ~
+  cp ./dotfiles/.xinitrc ~
+  cp ./dotfiles/.xprofile ~
+  cp ./dotfiles/.profile ~
 }
 
 configure
