@@ -14,6 +14,8 @@ function lightdm_configure()
   sudo cp ./dotfiles/lightdm/lightdm.conf /etc/lightdm/lightdm.conf
   sudo cp ./dotfiles/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
   sudo cp ./dotfiles/lightdm/lightdmxrandr.sh /usr/share
+  sudo mkdir -p /usr/share/backgrounds
+  sudo cp ./Wallpapers/background.png /usr/share/backgrounds
 }
 
 function copy_wallpapers()
