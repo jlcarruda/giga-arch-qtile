@@ -7,7 +7,7 @@ PIP_PACKAGES_FILE="pip_packages"
 
 function install_base_packages()
 {
-  sudo pacman -Sy --noconfirm
+  sudo pacman -Syu --noconfirm
   echo "::::: Installing base packages :::::"
   while read -r package; do
       sudo pacman -S --noconfirm "$package"
