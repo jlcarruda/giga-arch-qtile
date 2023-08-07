@@ -23,19 +23,17 @@ function copy_wallpapers()
   mkdir -p ~/Pictures/Wallpapers
   sudo mkdir -p /usr/share/backgrounds
   cp -r ./Wallpapers/* ~/Pictures/Wallpapers
-  
 }
 
 function configure()
 {
-  cp -r ./dotfiles/.config/* $HOME/.config
+  cp -a ./dotfiles/.config/. $HOME/.config/
   cp ./dotfiles/.zshrc ~
   cp ./dotfiles/.xinitrc ~
   cp ./dotfiles/.xprofile ~
   cp ./dotfiles/.profile ~
-
-  set_fonts
-  lightdm_configure
 }
 
 configure
+set_fonts
+lightdm_configure
