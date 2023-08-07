@@ -1,7 +1,7 @@
 function set_fonts()
 {
   mkdir -p  ~/.fonts
-  cp ./dotfiles/.fonts/* ~/.fonts
+  cp -a ./dotfiles/.fonts/. ~/.fonts
   sudo mkdir -p /usr/share/fonts/OTF
   sudo mkdir -p /usr/share/fonts/TTF
   sudo cp ./dotfiles/.fonts/*.ttf /usr/share/fonts/TTF

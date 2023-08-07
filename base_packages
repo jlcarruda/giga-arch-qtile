@@ -3,6 +3,7 @@ alsautils
 barrier
 base-devel
 bmon
+cargo
 code
 dunst
 extra/libnewt
@@ -17,6 +18,7 @@ pulseaudio-alsa
 python-pip
 qtile
 rofi
+rust
 task
 transmission-cli
 unclutter
