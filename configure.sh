@@ -1,7 +1,7 @@
 function set_fonts()
 {
-  mkdir -p  ~/.fonts
-  cp -a ./dotfiles/.fonts/. ~/.fonts
+  mkdir -p  $HOME/.fonts
+  cp -a ./dotfiles/.fonts/. $HOME/.fonts
   sudo mkdir -p /usr/share/fonts/OTF
   sudo mkdir -p /usr/share/fonts/TTF
   sudo cp ./dotfiles/.fonts/*.ttf /usr/share/fonts/TTF
@@ -14,25 +14,24 @@ function lightdm_configure()
   sudo cp ./dotfiles/lightdm/lightdm.conf /etc/lightdm/lightdm.conf
   sudo cp ./dotfiles/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
   sudo cp ./dotfiles/lightdm/lightdmxrandr.sh /usr/share
-  sudo mkdir -p /usr/share/backgrounds
-  sudo cp ./Wallpapers/background.png /usr/share/backgrounds
 }
 
 function copy_wallpapers()
 {
-  mkdir -p ~/Pictures/Wallpapers
+  mkdir -p $HOME/Pictures/Wallpapers
   sudo mkdir -p /usr/share/backgrounds
-  cp -r ./Wallpapers/* ~/Pictures/Wallpapers
+  sudo cp ./Wallpapers/background.png /usr/share/backgrounds
+  cp -r ./Wallpapers/* $HOME/Pictures/Wallpapers
 }
 
 function configure()
 {
   cp -a ./dotfiles/.config/. $HOME/.config/
   cp -a ./dotfiles/.local/bin/. /usr/bin/
-  cp ./dotfiles/.zshrc ~
-  cp ./dotfiles/.xinitrc ~
-  cp ./dotfiles/.xprofile ~
-  cp ./dotfiles/.profile ~
+  cp ./dotfiles/.zshrc $HOME
+  cp ./dotfiles/.xinitrc $HOME
+  cp ./dotfiles/.xprofile $HOME
+  cp ./dotfiles/.profile $HOME
 }
 
 configure
