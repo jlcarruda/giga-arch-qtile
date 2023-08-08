@@ -26,12 +26,16 @@ function copy_wallpapers()
 
 function configure()
 {
-  cp -a ./dotfiles/.config/. $HOME/.config/
-  cp -r ./dotfiles/.local/bin/* /usr/bin
-  cp ./dotfiles/.zshrc $HOME
-  cp ./dotfiles/.xinitrc $HOME
-  cp ./dotfiles/.xprofile $HOME
-  cp ./dotfiles/.profile $HOME
+  cp -a $HOME/.ricing/dotfiles/.config/. $HOME/.config/
+  cp $HOME/.ricing/dotfiles/.local/bin/autostart /usr/bin
+  cp $HOME/.ricing/dotfiles/.local/bin/boot /usr/bin
+  cp $HOME/.ricing/dotfiles/.local/bin/genwal /usr/bin
+  cp $HOME/.ricing/dotfiles/.local/bin/selectwal /usr/bin
+  cp $HOME/.ricing/dotfiles/.local/bin/wifi2 /usr/bin
+  cp $HOME/.ricing/dotfiles/.zshrc $HOME
+  cp $HOME/.ricing/dotfiles/.xinitrc $HOME
+  cp $HOME/.ricing/dotfiles/.xprofile $HOME
+  cp $HOME/.ricing/dotfiles/.profile $HOME
 }
 
 configure
