@@ -28,6 +28,7 @@ function copy_wallpapers()
 function configure()
 {
   cp -a ./dotfiles/.config/. $HOME/.config/
+  cp -a ./dotfiles/.local/bin/. /usr/bin/
   cp ./dotfiles/.zshrc ~
   cp ./dotfiles/.xinitrc ~
   cp ./dotfiles/.xprofile ~
