@@ -1,6 +1,6 @@
 function set_fonts()
 {
-  mkdir -p  $HOME/.fonts
+  mkdir -p $HOME/.fonts
   cp -a ./dotfiles/.fonts/. $HOME/.fonts
   sudo mkdir -p /usr/share/fonts/OTF
   sudo mkdir -p /usr/share/fonts/TTF
@@ -19,15 +19,15 @@ function lightdm_configure()
 function copy_wallpapers()
 {
   mkdir -p $HOME/Pictures/Wallpapers
-  sudo mkdir -p /usr/share/backgrounds
-  sudo cp ./Wallpapers/background.png /usr/share/backgrounds
+  sudo mkdir -p /usr/local/backgrounds
+  sudo cp ./Wallpapers/background.png /usr/local/backgrounds
   cp -r ./Wallpapers/* $HOME/Pictures/Wallpapers
 }
 
 function configure()
 {
   cp -a ./dotfiles/.config/. $HOME/.config/
-  cp -a ./dotfiles/.local/bin/. /usr/bin/
+  cp -r ./dotfiles/.local/bin/* /usr/bin
   cp ./dotfiles/.zshrc $HOME
   cp ./dotfiles/.xinitrc $HOME
   cp ./dotfiles/.xprofile $HOME
