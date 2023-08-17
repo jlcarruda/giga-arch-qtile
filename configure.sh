@@ -1,3 +1,5 @@
+PWD=$(pwd)
+
 function set_fonts()
 {
   mkdir -p $HOME/.fonts
@@ -26,16 +28,16 @@ function copy_wallpapers()
 
 function configure()
 {
-  cp -a $HOME/.ricing/dotfiles/.config/. $HOME/.config/
-  cp $HOME/.ricing/dotfiles/.local/bin/autostart /usr/bin
-  cp $HOME/.ricing/dotfiles/.local/bin/boot /usr/bin
-  cp $HOME/.ricing/dotfiles/.local/bin/genwal /usr/bin
-  cp $HOME/.ricing/dotfiles/.local/bin/selectwal /usr/bin
-  cp $HOME/.ricing/dotfiles/.local/bin/wifi2 /usr/bin
-  cp $HOME/.ricing/dotfiles/.zshrc $HOME
-  cp $HOME/.ricing/dotfiles/.xinitrc $HOME
-  cp $HOME/.ricing/dotfiles/.xprofile $HOME
-  cp $HOME/.ricing/dotfiles/.profile $HOME
+  cp -a $PWD/dotfiles/.config/. $HOME/.config/
+  cp $PWD/dotfiles/.local/bin/autostart /usr/bin
+  cp $PWD/dotfiles/.local/bin/boot /usr/bin
+  cp $PWD/dotfiles/.local/bin/genwal /usr/bin
+  cp $PWD/dotfiles/.local/bin/selectwal /usr/bin
+  cp $PWD/dotfiles/.local/bin/wifi2 /usr/bin
+  cp $PWD/dotfiles/.zshrc $HOME
+  cp $PWD/dotfiles/.xinitrc $HOME
+  cp $PWD/dotfiles/.xprofile $HOME
+  cp $PWD/dotfiles/.profile $HOME
 }
 
 configure
