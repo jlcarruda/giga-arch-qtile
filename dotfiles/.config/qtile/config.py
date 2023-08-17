@@ -188,11 +188,11 @@ mouse = [
 ## Hooks
 @hook.subscribe.startup # This file gets executed everytime qtile restarts
 def start():
-  subprocess.call(home + '/.local/bin/boot')
+  subprocess.call('/usr/bin/boot')
       
 @hook.subscribe.startup_once # Ths file gets executed at first start only
 def start_once():
-  subprocess.call(home + '/.local/bin/autostart')
+  subprocess.call('/usr/bin/autostart')
 
 floating_layout = layout.Floating(
     float_rules=[
