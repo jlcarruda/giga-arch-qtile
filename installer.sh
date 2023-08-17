@@ -5,6 +5,12 @@ BASE_PACKAGES="base_packages"
 AUR_PACKAGES_FILE="aur_packages"
 PIP_PACKAGES_FILE="pip_packages"
 
+while getopts "o:" opt; do
+  case "$opt" in
+    o) only=$OPTARG ;;
+  esac
+done
+
 function install_base_packages()
 {
   sudo pacman -Syu --noconfirm
@@ -55,10 +61,25 @@ function install_pip_packages()
 function install()
 {
   ./ascii.sh
-  install_base_packages
-  paru_install
-  install_aur_packages
-
+  if [ -n "$only" ]; then
+    case $only in
+      BASE)
+        install_base_packages
+        ;;
+      AUR)
+        paru_install
+        install_aur_packages
+        ;;
+      PIP)
+        install_pip_packages
+        ;;
+    esac
+  else
+    install_base_packages
+    paru_install
+    install_aur_packages
+    install_pip_packages
+  fi
 }
 
 install

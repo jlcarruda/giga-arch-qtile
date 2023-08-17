@@ -1,10 +1,11 @@
 unset action
 
-while getopts "aic" opt; do
+while getopts "aico:" opt; do
   case "$opt" in
     a) action=ALL ;;
     i) action=INSTALL ;;
     c) action=CONFIGURE ;;
+    o) only=$OPTARG ;;
   esac
 done
 
@@ -18,7 +19,10 @@ case $action in
     ./configure.sh
     ;;
   INSTALL)
-    ./installer.sh
+    if [ -z "$only" ]; then
+      only=BASE
+    fi
+    ./installer.sh -o $only
     ;;
   CONFIGURE)
     ./configure.sh
