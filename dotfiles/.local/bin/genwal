@@ -1,7 +1,9 @@
 dir="$HOME/Pictures/Wallpapers/"
-file=`/bin/ls -1 "$dir" | sort --random-sort | head -1` # Select random file on directory
-path=`readlink --canonicalize "$dir/$file"` # Converts to full path
+theme_dir=$(find $dir -mindepth 1 -maxdepth 1 -type d | sort --random-sort | head -1)
+file=`/bin/ls -1 "$theme_dir" | sort --random-sort | head -1` # Select random file on directory
+path=`readlink --canonicalize "$theme_dir/$file"` # Converts to full path
 #### Set Wallpaper Selected / Random
+
 while getopts "w:t:l" opt; do
   case "$opt" in
     w) wall=$OPTARG ;;
