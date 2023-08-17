@@ -42,4 +42,5 @@ function configure()
 
 configure
 set_fonts
+copy_wallpapers
 lightdm_configure

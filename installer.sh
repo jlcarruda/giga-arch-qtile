@@ -62,5 +62,6 @@ function install()
 }
 
 install
+wpg-install.sh -gio
 ./configure.sh
-wpg-install.sh
+genwal
