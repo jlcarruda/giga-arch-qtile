@@ -16,6 +16,10 @@ pamixer
 picom
 pulseaudio-alsa
 python-pip
+python-psutil
+python-xdg
+python-iwlib
+python-dateutil
 qtile
 rofi
 rust
