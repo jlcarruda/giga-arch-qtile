@@ -31,6 +31,8 @@ from layout import *
 from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
+## TODO: adicionar tema de forma dinamica
+from themes.giga import *
 
 mod = "mod4"
 alt = "mod1"
@@ -145,9 +147,6 @@ widget_defaults = dict(
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
-
-## TODO: adicionar tema de forma dinamica
-from themes.giga import *
 
 screens = [
     Screen(
