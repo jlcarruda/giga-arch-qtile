@@ -28,6 +28,8 @@ function copy_wallpapers()
 
 function configure()
 {
+  wpg-install.sh -gio
+  wal -i /usr/local/backgrounds/background.png
   cp -a $PWD/dotfiles/.config/. $HOME/.config/
   sudo cp $PWD/dotfiles/.local/bin/autostart /usr/bin
   sudo cp $PWD/dotfiles/.local/bin/boot /usr/bin
@@ -44,3 +46,4 @@ configure
 set_fonts
 copy_wallpapers
 lightdm_configure
+genwal
