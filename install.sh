@@ -1,7 +1,17 @@
-unset action
 
-while getopts "aico:" opt; do
+print_help (){
+  echo "Install and configure the dotfiles for Arch Linux Ricing"
+  echo "Usage: $0 [-a] [-i] [-c] [-o <only>]"
+  echo "  -a: Install and configure everything"
+  echo "  -i: Install only"
+  echo "  -c: Configure only"
+  echo "  -o: Install only the specified package"
+  echo "  -h: Print this help"
+}
+
+while getopts "haico:" opt; do
   case "$opt" in
+    h) print_help; exit 0 ;;
     a) action=ALL ;;
     i) action=INSTALL ;;
     c) action=CONFIGURE ;;
@@ -19,10 +29,11 @@ case $action in
     ./configure.sh
     ;;
   INSTALL)
-    if [ -z "$only" ]; then
-      only=BASE
+    if [ -n "$only" ]; then
+      ./installer.sh -o $only
+    else
+      ./installer.sh
     fi
-    ./installer.sh -o $only
     ;;
   CONFIGURE)
     ./configure.sh
