@@ -28,11 +28,11 @@
 import subprocess
 from variables import *
 from layout import *
+from theme import *
 from libqtile import bar, layout, widget, hook
 from libqtile.config import Click, Drag, Group, Key, Match, Screen
 from libqtile.lazy import lazy
 ## TODO: adicionar tema de forma dinamica
-from themes.giga import *
 
 mod = "mod4"
 alt = "mod1"
