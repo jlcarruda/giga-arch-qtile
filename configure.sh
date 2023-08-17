@@ -29,11 +29,11 @@ function copy_wallpapers()
 function configure()
 {
   cp -a $PWD/dotfiles/.config/. $HOME/.config/
-  cp $PWD/dotfiles/.local/bin/autostart /usr/bin
-  cp $PWD/dotfiles/.local/bin/boot /usr/bin
-  cp $PWD/dotfiles/.local/bin/genwal /usr/bin
-  cp $PWD/dotfiles/.local/bin/selectwal /usr/bin
-  cp $PWD/dotfiles/.local/bin/wifi2 /usr/bin
+  sudo cp $PWD/dotfiles/.local/bin/autostart /usr/bin
+  sudo cp $PWD/dotfiles/.local/bin/boot /usr/bin
+  sudo cp $PWD/dotfiles/.local/bin/genwal /usr/bin
+  sudo cp $PWD/dotfiles/.local/bin/selectwal /usr/bin
+  sudo cp $PWD/dotfiles/.local/bin/wifi2 /usr/bin
   cp $PWD/dotfiles/.zshrc $HOME
   cp $PWD/dotfiles/.xinitrc $HOME
   cp $PWD/dotfiles/.xprofile $HOME
