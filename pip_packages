@@ -1,3 +1,4 @@
 fontawesome
 git+http://github.com/bcbnz/python-rofi.git
 requests
+dbus-next
