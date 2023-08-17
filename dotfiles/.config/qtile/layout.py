@@ -114,8 +114,8 @@ layout_theme=init_layout_theme()
 
 def init_layouts():
   return [
-    layout.Spiral(main_pane="left",ratio_increment=0.01,**layout_theme()),
-    layout.MonadTall(max_ratio=max_ratio,ratio=ratio,**layout_theme()),
-    layout.MonadWide(max_ratio=0.85,ratio=0.85,**layout_theme()),
-    layout.Floating(**layout_theme()),
+    layout.Spiral(main_pane="left",ratio_increment=0.01,**layout_theme),
+    layout.MonadTall(max_ratio=max_ratio,ratio=ratio,**layout_theme),
+    layout.MonadWide(max_ratio=0.85,ratio=0.85,**layout_theme),
+    layout.Floating(**layout_theme),
     ]
