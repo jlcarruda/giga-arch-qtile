@@ -44,7 +44,8 @@ visual_bell:
   duration: 300
   color: '0x9a9a9a'
 
-background_opacity: 0.9
+window:
+  opacity: 0.9
 
 debug:
   render_timer: false
