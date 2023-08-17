@@ -63,8 +63,8 @@ mouse:
   double_click: { threshold: 300 }
   triple_click: { threshold: 300 }
   hide_when_typing: true
-  url:
-    launcher: firefox
+  # url:
+  #   launcher: firefox
 
     # URL modifiers
     #
