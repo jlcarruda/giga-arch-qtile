@@ -2,6 +2,7 @@ lazydocker
 lib32-libffmpeg
 picom-pijulius-git
 python-requests
+python-types-requests
 python-rofi-git 
 qtile-extras
 rofi-emoji
@@ -12,3 +13,4 @@ zathura-pdf-mupdf
 zathura-ps
 zathura-pywal-git
 glibc
+xorg-xdpyinfo

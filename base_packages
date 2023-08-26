@@ -20,6 +20,7 @@ python-psutil
 python-xdg
 python-iwlib
 python-dateutil
+python-bowler
 qtile
 rofi
 rust

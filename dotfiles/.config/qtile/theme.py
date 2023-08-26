@@ -341,9 +341,7 @@ bar_config = {
 
 
 def screen1_widgets():
-    widgets_screen1 = init_widget_list()
-    return widgets_screen1
-
+    return init_widget_list()
 
 def init_screens_bottom():
     return [Screen(bottom=bar.Bar(**bar_config))]
@@ -352,11 +350,11 @@ def init_screens_bottom():
 def init_screens_top():
     return [Screen(top=bar.Bar(**bar_config))]
 
-
-if bar_position == "top":
-    screens = init_screens_top()
-else:
-    screens = init_screens_bottom()
-
-widgets_list = init_widget_list()
 widgets_screen1 = screen1_widgets()
+
+# if bar_position == "top":
+screens = init_screens_top()
+# else:
+#     screens = init_screens_bottom()
+
+# widgets_list = init_widget_list()
