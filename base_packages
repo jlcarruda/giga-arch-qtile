@@ -1,3 +1,4 @@
+zsh
 alacritty
 alsautils
 barrier
@@ -32,4 +33,3 @@ xclip
 xorg-xkill
 xorg-xrandr
 xorg-xset
-zsh

@@ -26,26 +26,41 @@ function copy_wallpapers()
   cp -r ./Wallpapers/* $HOME/Pictures/Wallpapers
 }
 
-function configure()
+function config_and_dotlocal()
 {
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   cp -a $PWD/dotfiles/.config/. $HOME/.config/
   sudo cp $PWD/dotfiles/.local/bin/autostart /usr/bin
   sudo cp $PWD/dotfiles/.local/bin/boot /usr/bin
   sudo cp $PWD/dotfiles/.local/bin/genwal /usr/bin
   sudo cp $PWD/dotfiles/.local/bin/selectwal /usr/bin
   sudo cp $PWD/dotfiles/.local/bin/wifi2 /usr/bin
+}
+
+function omzsh_install() {
+  if [ "$(command -v zsh)" ]; then
+    echo "===> ZSH is already installed. Moving foward..."
+    return
+  else
+    echo "===> Installing Zsh..."
+    sudo pacman -S zsh --noconfirm
+  fi
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+}
+
+function copy_dotfiles() {
   cp $PWD/dotfiles/.zshrc $HOME
   cp $PWD/dotfiles/.xinitrc $HOME
   cp $PWD/dotfiles/.xprofile $HOME
   cp $PWD/dotfiles/.profile $HOME
 }
 
-configure
+config_and_dotlocal
 set_fonts
 copy_wallpapers
 lightdm_configure
 
 wal -i /usr/local/backgrounds/background.png
 wpg-install.sh -gio
+omzsh_install
+copy_dotfiles
 genwal

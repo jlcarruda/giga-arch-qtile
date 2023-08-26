@@ -83,4 +83,3 @@ function install()
 }
 
 install
-wpg-install.sh -gio
