@@ -1,6 +1,7 @@
 lazydocker
 lib32-libffmpeg
 picom-pijulius-git
+python2
 python-requests
 python-types-requests
 python-rofi-git 
