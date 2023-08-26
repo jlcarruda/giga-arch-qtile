@@ -19,7 +19,7 @@ set_wall(){
     else
       wp=$dir$wall
   fi
-  wpg -c -s ${wp} wal # Wal sets wallpaper and genates new color scheme
+  wpg -c -s ${wp} --backend wal # Wal sets wallpaper and genates new color scheme
   sudo cp ${wp} "/usr/local/backgrounds/background.png"
   sudo cp -r ~/.local/share/themes/FlatColor  /usr/local/themes/
   qtile cmd-obj -o cmd -f restart 
