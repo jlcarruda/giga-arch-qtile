@@ -34,9 +34,9 @@ from qtile_extras.widget.decorations import (RectDecoration)
 from qtile_extras import widget as extra_widget
 
 sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
-from .variables import *
-from .layout import *
-from .widgets import *
+from variables import *
+from layout import *
+from widgets import *
 
 net_interface = get_net_dev()
 
