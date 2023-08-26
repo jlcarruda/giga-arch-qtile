@@ -117,3 +117,5 @@ alias dob="docker build"
 #   printf "Starting docker ...\n"
 #   sudo /usr/sbin/service docker start
 # fi
+
+wal -R -q && clear
