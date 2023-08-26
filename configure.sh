@@ -28,7 +28,7 @@ function copy_wallpapers()
 
 function configure()
 {
-  wal -i /usr/local/backgrounds/background.png
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   cp -a $PWD/dotfiles/.config/. $HOME/.config/
   sudo cp $PWD/dotfiles/.local/bin/autostart /usr/bin
   sudo cp $PWD/dotfiles/.local/bin/boot /usr/bin
@@ -45,4 +45,7 @@ configure
 set_fonts
 copy_wallpapers
 lightdm_configure
+
+wal -i /usr/local/backgrounds/background.png
+wpg-install.sh -gio
 genwal
